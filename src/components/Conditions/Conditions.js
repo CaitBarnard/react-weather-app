@@ -13,6 +13,11 @@ const conditions = (props) => {
           <p>
             <strong>{props.responseObj.name}</strong>
           </p>
+          <img
+            className={classes.Icon}
+            src={`http://openweathermap.org/img/wn/${props.responseObj.weather[0].icon}.png`}
+            alt="Current weather icon"
+          />
           <p>
             It is currently {Math.round(props.responseObj.main.temp)} degrees
             with {props.responseObj.weather[0].description}.

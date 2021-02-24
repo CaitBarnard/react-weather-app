@@ -18,6 +18,13 @@
   margin: 10px auto;
 }
 
+.Icon {
+  margin: auto;
+  width: 50px;
+  background-color: rgb(214, 212, 212);
+  border-radius: 30%;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
