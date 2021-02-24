@@ -13,7 +13,7 @@ function App() {
       <main>
         <Forecast />
       </main>
-      <footer>Page created by Caitlin</footer>
+      <footer>This app uses the <a href="https://openweathermap.org/api">Open Weather Map API</a></footer>
     </div>
   );
 }
