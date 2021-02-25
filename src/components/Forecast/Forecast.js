@@ -57,7 +57,12 @@ const Forecast = () => {
         unit={unit}
         setUnit={setUnit}
       />
-      <Conditions responseObj={responseObj} error={error} loading={loading} />
+      <Conditions
+        responseObj={responseObj}
+        unit={unit}
+        error={error}
+        loading={loading}
+      />
     </div>
   );
 };

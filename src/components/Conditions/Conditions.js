@@ -3,11 +3,14 @@ import classes from "./Conditions.module.css";
 // import Data from "../../data.json";
 
 const conditions = (props) => {
+  var measurement = "";
+
+  props.unit === "metric" ? (measurement = "C") : (measurement = "F");
+
   function dateFormat(time) {
     return new Intl.DateTimeFormat("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
-      second: "2-digit",
     }).format(time);
   }
   return (
@@ -27,8 +30,20 @@ const conditions = (props) => {
             alt="Current weather icon"
           />
           <p>
-            It is currently {Math.round(props.responseObj.main.temp)} degrees
-            with {props.responseObj.weather[0].description}. Sunrise is at {dateFormat(props.responseObj.sys.sunrise)}. Sunset is at {dateFormat(props.responseObj.sys.sunset)}.
+            It is currently {Math.round(props.responseObj.main.temp)}
+            {measurement} with {props.responseObj.weather[0].description}.
+          </p>
+          <p>
+            Feels like {Math.round(props.responseObj.main.feels_like)}
+            {measurement} with a low of{" "}
+            {Math.round(props.responseObj.main.temp_min)}
+            {measurement} and a high of{" "}
+            {Math.round(props.responseObj.main.temp_max)}
+            {measurement}.
+          </p>
+          <p>
+            Sunrise is at {dateFormat(props.responseObj.sys.sunrise)}. Sunset is
+            at {dateFormat(props.responseObj.sys.sunset)}.
           </p>
         </div>
       ) : null}
